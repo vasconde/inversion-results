@@ -45,6 +45,15 @@ font_size = 7;
 fig_pos_size = [0 0 8 5.5];
 m_size = 3;
 
+font_size = 6;
+fig_pos_size = [0 0 5.33 3.66];
+m_size = 2;
+if (equal_and_tight)
+    font_size = 6;
+    fig_pos_size = [0 0 5.33 5.33];
+    m_size = 2;
+end
+
 %font_size = 6;
 %fig_pos_size = [0 0 5.33 3.66];
 %m_size = 2;
