@@ -157,6 +157,12 @@ ifig = ifig + 1;
 
 boxplot(sm_m_v1_06 - sm_is_06)
 
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
+
 ylim(boxplotlims);
 
 grid on;
@@ -262,6 +268,12 @@ ifig = ifig + 1;
 
 
 boxplot(sm_m_v2_06 - sm_is_06)
+
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
 
 ylim(boxplotlims);
 
@@ -371,6 +383,12 @@ ifig = ifig + 1;
 
 boxplot(sm_m_v1_12 - sm_is_12)
 
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
+
 ylim(boxplotlims);
 
 grid on;
@@ -474,6 +492,12 @@ ifig = ifig + 1;
 
 
 boxplot(sm_m_v2_12 - sm_is_12)
+
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
 
 ylim(boxplotlims);
 
