@@ -28,8 +28,9 @@ disp('STATS');
 pp = 4;
 disp(['media = ' num2str(media,pp)]);
 disp(['des pad = ' num2str(despad,pp)]);
-disp('');
+disp(' ');
 disp(['p25, p50, p75 = ' num2str(pdata(1),pp) ', ' num2str(pdata(2),pp) ', ' num2str(pdata(3),pp)]);
 disp(['perc. range = ' num2str(prange,pp)]);
+disp(' ')
 disp(['min, max = ' num2str(dmin,pp) ', ' num2str(dmax,pp)]);
 disp('');
