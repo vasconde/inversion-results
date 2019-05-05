@@ -37,7 +37,7 @@ sm_m_v1_12 = sm_m;
 sm_m_v2_12 = sm_m3;
 
 
-%% GRAFICOS - 6 dias
+%% GRAFICOS - definicoes
 
 ifig = 1;
 
@@ -45,14 +45,14 @@ font_size = 7;
 fig_pos_size = [0 0 8 5.5];
 m_size = 3;
 
-% font_size = 6;
-% fig_pos_size = [0 0 5.33 3.66];
-% m_size = 2;
-% if (equal_and_tight)
-%     font_size = 6;
-%     fig_pos_size = [0 0 5.33 5.33];
-%     m_size = 2;
-% end
+font_size = 6;
+fig_pos_size = [0 0 5.33 3.66];
+m_size = 2;
+if (equal_and_tight)
+    font_size = 6;
+    fig_pos_size = [0 0 5.33 5.33];
+    m_size = 2;
+end
 
 %font_size = 6;
 %fig_pos_size = [0 0 5.33 3.66];
@@ -68,7 +68,9 @@ y_max = 0.75
 
 boxplotlims = [-0.25 0.25];
 
-%
+%% V1 (6 dias) - tm, disp, boxplot
+
+% v1 (6 dias), tm 
 
 disp('Gera grafico: time series SM, SM v1 (6 dias)');
 
@@ -112,7 +114,7 @@ fig.PaperPosition = fig_pos_size;
 print('ts_inv_v1_06d.png','-dpng', '-r300');
 
 
-%
+% v1 (6 dias), disp
 
 
 disp('Gera grafico: grafico dispersao SM vs SM v1 (6 dias)');
@@ -145,7 +147,9 @@ fig.PaperPosition = fig_pos_size;
 
 print('sm_insitu_vs_insar_v1_06d.png','-dpng', '-r300');
 
-% Stats and boxplot
+
+
+% v1 (6 dias), stats, boxplot 
 
 disp(' ');
 f_stats (sm_is_06, sm_m_v1_06);
@@ -176,7 +180,9 @@ fig.PaperPosition = fig_pos_size;
 print('boxplot_sm_insitu_vs_insar_v1_06d.png','-dpng', '-r300');
 
 
-%
+%% V2 (6 dias) - tm, disp, boxplot
+
+% v2 (6 dias), tm 
 
 
 
@@ -223,6 +229,7 @@ print('ts_inv_v2_06d.png','-dpng', '-r300');
 
 
 
+% v2 (6 dias), disp
 
 
 disp('Gera grafico: grafico dispersao SM vs SM v2 (6 dias)');
@@ -257,8 +264,8 @@ print('sm_insitu_vs_insar_v2_06d.png','-dpng', '-r300');
 
 
 
+% v2 (6 dias), stats and boxplot
 
-% Stats and boxplot
 
 disp(' ');
 f_stats (sm_is_06, sm_m_v2_06);
@@ -288,12 +295,9 @@ fig.PaperPosition = fig_pos_size;
 print('boxplot_sm_insitu_vs_insar_v2_06d.png','-dpng', '-r300');
 
 
-%
+%% V1 (12 dias) - tm, disp, boxplot
 
-
-
-
-%% 12 dias
+% v1 (12 dias), tm 
 
 
 
@@ -339,7 +343,8 @@ fig.PaperPosition = fig_pos_size;
 print('ts_inv_v1_12d.png','-dpng', '-r300');
 
 
-%
+
+% v1 (12 dias), disp
 
 disp('Gera grafico: grafico dispersao SM vs SM v1 (12 dias)');
 
@@ -372,7 +377,8 @@ fig.PaperPosition = fig_pos_size;
 print('sm_insitu_vs_insar_v1_12d.png','-dpng', '-r300');
 
 
-% Stats and boxplot
+
+% v1 (12 dias), stats, boxplot
 
 disp(' ');
 f_stats (sm_is_12, sm_m_v1_12);
@@ -402,9 +408,9 @@ fig.PaperPosition = fig_pos_size;
 print('boxplot_sm_insitu_vs_insar_v1_12d.png','-dpng', '-r300');
 
 
-%
+%% V2 (12 dias) - tm, disp, boxplot
 
-
+% v2 (12 dias), tm 
 
 disp('Gera grafico: time series SM, SM v2 (12 dias)');
 
@@ -448,7 +454,7 @@ fig.PaperPosition = fig_pos_size;
 print('ts_inv_v2_12d.png','-dpng', '-r300');
 
 
-%
+% v2 (12 dias), disp
 
 
 disp('Gera grafico: grafico dispersao SM vs SM v2 (12 dias)');
@@ -482,7 +488,7 @@ fig.PaperPosition = fig_pos_size;
 print('sm_insitu_vs_insar_v2_12d.png','-dpng', '-r300');
 
 
-% Stats and boxplot
+% v2 (12 dias), stats, boxplot
 
 disp(' ');
 f_stats (sm_is_12, sm_m_v2_12);
