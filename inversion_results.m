@@ -180,120 +180,6 @@ fig.PaperPosition = fig_pos_size;
 print('boxplot_sm_insitu_vs_insar_v1_06d.png','-dpng', '-r300');
 
 
-%% V2 (6 dias) - tm, disp, boxplot
-
-% v2 (6 dias), tm 
-
-
-
-disp('Gera grafico: time series SM, SM v2 (6 dias)');
-
-figure(ifig)
-ifig = ifig + 1;
-
-plot(day_06, sm_is_06, 'o-r', 'MarkerFaceColor', 'r', 'MarkerSize',m_size);
-hold on;
-plot(day_06, sm_m_v2_06, 's-b', 'MarkerSize',m_size);
-
-
-xlabel('data de aquisicao (slave)');
-ylabel('SM [m^3 m^{-3}]');
-ylim([y_min y_max]);
-xlim([d_min d_max]);
-
-% %set(gca,'XTick',[x_min:res_x:x_max]);
-%set(gca,'YTick',[y_min:y_res:y_max]);
-
-set(gca,'YTick',y_min:tr_y:y_max);
-
-ax = gca;
-%ax.XAxis.TickLabelFormat = '%,.1f';
-%ax.YAxis.TickLabelFormat = '%,.0f';
-
-grid on;
-
-L = get(gca,'XLim');
-%vecTicks = linspace(L(1),L(2),NumTicks);
-vecTicks = [L(1):tr:L(2)];
-set(gca,'XTick',vecTicks)
-
-datetick('x','ddmmmyy','keepticks');
-set(gca,'XTickLabelRotation',45);
-
-set(gca,'fontsize', font_size)
-fig = gcf;
-fig.PaperUnits = 'centimeters';
-fig.PaperPosition = fig_pos_size;
-
-print('ts_inv_v2_06d.png','-dpng', '-r300');
-
-
-
-% v2 (6 dias), disp
-
-
-disp('Gera grafico: grafico dispersao SM vs SM v2 (6 dias)');
-
-figure(ifig)
-ifig = ifig + 1;
- 
-plot(sm_is_06, sm_m_v2_06, 'or', 'MarkerSize',m_size);
-hold on;
-plot([y_min y_max], [y_min y_max],'-k');
-ylim([y_min y_max]);
-xlim([y_min y_max]);
-
-set(gca,'XTick',y_min:tr_y:y_max);
-set(gca,'YTick',y_min:tr_y:y_max);
-
-xlabel(['SM_{in-situ} [mm^3 mm^{-3}]' ]);
-ylabel(['SM_{InSAR} [mm^3 mm^{-3}]']);
-
-grid on;
-if (equal_and_tight)
-    axis equal;
-    axis tight;
-end
-
-set(gca,'fontsize', font_size)
-fig = gcf;
-fig.PaperUnits = 'centimeters';
-fig.PaperPosition = fig_pos_size;
-
-print('sm_insitu_vs_insar_v2_06d.png','-dpng', '-r300');
-
-
-
-% v2 (6 dias), stats and boxplot
-
-
-disp(' ');
-f_stats (sm_is_06, sm_m_v2_06);
-disp(' ');
-
-figure(ifig)
-ifig = ifig + 1;
-
-
-boxplot(sm_m_v2_06 - sm_is_06, 'Labels',{'Bt = 6 dias'})
-
-ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
-
-xlim_boxplot=get(gca,'xlim');
-hold on
-plot(xlim_boxplot,[0 0], 'k:')
-
-ylim(boxplotlims);
-
-grid on;
-
-set(gca,'fontsize', font_size)
-fig = gcf;
-fig.PaperUnits = 'centimeters';
-fig.PaperPosition = fig_pos_size;
-
-print('boxplot_sm_insitu_vs_insar_v2_06d.png','-dpng', '-r300');
-
 
 %% V1 (12 dias) - tm, disp, boxplot
 
@@ -408,6 +294,121 @@ fig.PaperPosition = fig_pos_size;
 print('boxplot_sm_insitu_vs_insar_v1_12d.png','-dpng', '-r300');
 
 
+
+%% V2 (6 dias) - tm, disp, boxplot
+
+% v2 (6 dias), tm 
+
+
+
+disp('Gera grafico: time series SM, SM v2 (6 dias)');
+
+figure(ifig)
+ifig = ifig + 1;
+
+plot(day_06, sm_is_06, 'o-r', 'MarkerFaceColor', 'r', 'MarkerSize',m_size);
+hold on;
+plot(day_06, sm_m_v2_06, 's-b', 'MarkerSize',m_size);
+
+
+xlabel('data de aquisicao (slave)');
+ylabel('SM [m^3 m^{-3}]');
+ylim([y_min y_max]);
+xlim([d_min d_max]);
+
+% %set(gca,'XTick',[x_min:res_x:x_max]);
+%set(gca,'YTick',[y_min:y_res:y_max]);
+
+set(gca,'YTick',y_min:tr_y:y_max);
+
+ax = gca;
+%ax.XAxis.TickLabelFormat = '%,.1f';
+%ax.YAxis.TickLabelFormat = '%,.0f';
+
+grid on;
+
+L = get(gca,'XLim');
+%vecTicks = linspace(L(1),L(2),NumTicks);
+vecTicks = [L(1):tr:L(2)];
+set(gca,'XTick',vecTicks)
+
+datetick('x','ddmmmyy','keepticks');
+set(gca,'XTickLabelRotation',45);
+
+set(gca,'fontsize', font_size)
+fig = gcf;
+fig.PaperUnits = 'centimeters';
+fig.PaperPosition = fig_pos_size;
+
+print('ts_inv_v2_06d.png','-dpng', '-r300');
+
+
+
+% v2 (6 dias), disp
+
+
+disp('Gera grafico: grafico dispersao SM vs SM v2 (6 dias)');
+
+figure(ifig)
+ifig = ifig + 1;
+ 
+plot(sm_is_06, sm_m_v2_06, 'or', 'MarkerSize',m_size);
+hold on;
+plot([y_min y_max], [y_min y_max],'-k');
+ylim([y_min y_max]);
+xlim([y_min y_max]);
+
+set(gca,'XTick',y_min:tr_y:y_max);
+set(gca,'YTick',y_min:tr_y:y_max);
+
+xlabel(['SM_{in-situ} [mm^3 mm^{-3}]' ]);
+ylabel(['SM_{InSAR} [mm^3 mm^{-3}]']);
+
+grid on;
+if (equal_and_tight)
+    axis equal;
+    axis tight;
+end
+
+set(gca,'fontsize', font_size)
+fig = gcf;
+fig.PaperUnits = 'centimeters';
+fig.PaperPosition = fig_pos_size;
+
+print('sm_insitu_vs_insar_v2_06d.png','-dpng', '-r300');
+
+
+
+% v2 (6 dias), stats and boxplot
+
+
+disp(' ');
+f_stats (sm_is_06, sm_m_v2_06);
+disp(' ');
+
+figure(ifig)
+ifig = ifig + 1;
+
+
+boxplot(sm_m_v2_06 - sm_is_06, 'Labels',{'Bt = 6 dias'})
+
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
+
+ylim(boxplotlims);
+
+grid on;
+
+set(gca,'fontsize', font_size)
+fig = gcf;
+fig.PaperUnits = 'centimeters';
+fig.PaperPosition = fig_pos_size;
+
+print('boxplot_sm_insitu_vs_insar_v2_06d.png','-dpng', '-r300');
+
 %% V2 (12 dias) - tm, disp, boxplot
 
 % v2 (12 dias), tm 
@@ -518,4 +519,3 @@ fig.PaperPosition = fig_pos_size;
 print('boxplot_sm_insitu_vs_insar_v2_12d.png','-dpng', '-r300');
 
 
-%
