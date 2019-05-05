@@ -293,6 +293,34 @@ fig.PaperPosition = fig_pos_size;
 
 print('boxplot_sm_insitu_vs_insar_v1_12d.png','-dpng', '-r300');
 
+%% V1 - BOXPLOT (6 e 12 dias)
+
+
+figure(ifig)
+ifig = ifig + 1;
+
+boxplot([sm_m_v1_06' - sm_is_06', sm_m_v1_12' - sm_is_12'], 'Labels',{'6 dias','12 dias'});
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+xlabel('Bt');
+
+
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
+
+ylim(boxplotlims);
+set(gca,'YTick',boxplotlims(1):0.05:boxplotlims(2));
+
+grid on;
+
+set(gca,'fontsize', font_size)
+fig = gcf;
+fig.PaperUnits = 'centimeters';
+fig.PaperPosition = fig_pos_size;
+
+print('boxplot_sm_insitu_vs_insar_v1_06d_and_12d.png','-dpng', '-r300');
+
 
 
 %% V2 (6 dias) - tm, disp, boxplot
@@ -518,4 +546,34 @@ fig.PaperPosition = fig_pos_size;
 
 print('boxplot_sm_insitu_vs_insar_v2_12d.png','-dpng', '-r300');
 
+
+
+
+%% V2 - BOXPLOT (6 e 12 dias)
+
+
+figure(ifig)
+ifig = ifig + 1;
+
+boxplot([sm_m_v2_06' - sm_is_06', sm_m_v2_12' - sm_is_12'], 'Labels',{'6 dias','12 dias'});
+ylabel('SM_{InSAR} - SM_{in-situ} [mm^3 mm^{-3}]');
+xlabel('Bt');
+
+
+
+xlim_boxplot=get(gca,'xlim');
+hold on
+plot(xlim_boxplot,[0 0], 'k:')
+
+ylim(boxplotlims);
+set(gca,'YTick',boxplotlims(1):0.05:boxplotlims(2));
+
+grid on;
+
+set(gca,'fontsize', font_size)
+fig = gcf;
+fig.PaperUnits = 'centimeters';
+fig.PaperPosition = fig_pos_size;
+
+print('boxplot_sm_insitu_vs_insar_v2_06d_and_12d.png','-dpng', '-r300');
 
